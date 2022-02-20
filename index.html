@@ -475,11 +475,9 @@
 <h3 id="1-元件采购过程"><a href="#1-元件采购过程" class="headerlink" title="1.元件采购过程"></a>1.元件采购过程</h3><p>屏幕很早就买了，接口是12pin的。然后pcb打板的时候才发现，工程用的屏幕是10pin的，就照另一个做12pin小电视的对着引脚改了过来，至于为什么不直接用这个工程，因为它的芯片用的8266，但我们只买了esp32。屏幕一改，布线都乱了，于是重新摆元件，重新布线，布线直接用了立创的自动布线，反正能用就行。</p>
 <p>打完pcb已经放假回家了，在家里挑了下元件，bom导出到立创商城挨个对，又想起来莱洛三角也要做的，干脆一块把元件下单了。各种型号的元件，缺货的也很多，还得淘宝重新找，虽然缺货的在立创有订货服务，但据说非常慢，而且贵…反正ic在立创基本是买不到的。第一次下单也不太清楚，提交的时候发现立创有两个仓库，分别发货运费直接翻倍…然后又重新选仓库，经常有缺货的，然后又得重新找。总之核对过程非常的繁琐。</p>
 <h3 id="2-收到pcb和元件，开始焊接"><a href="#2-收到pcb和元件，开始焊接" class="headerlink" title="2.收到pcb和元件，开始焊接"></a>2.收到pcb和元件，开始焊接</h3><p>工具都提前准备好了，买了一个鹿仙子恒温加热台，不带温控，但也勉强能用。pcb焊点挨个涂上锡膏，买的针筒式的，结果非常干，完全不好挤，最后变成一点一点涂（要是提前打了钢网就好了：）</p>
-<p>对着原理图摆好元件，放到加热台烧好，涂得没注意量，几个ic都连锡了。有一个直接浮了起来，TypeC也连了一大片，试图用烙铁吸掉，无奈劣质烙铁完全不沾锡，还烫坏了一个ic… 最后费大劲找到一个936烙铁才搞定。</p>
-<p>用万用表检查短路情况，基本没有短路了，就是TypeC一直搞不定，始终有几个短路的引脚。最后看了下原理图，短路的脚其实没用到，是做快充协议检测用的，干脆不管，上电测试！很好，没有烧掉，电脑也能找到CH340的端口，电路这块总算搞定了（实际上坑还在后面…</p>
-<h3 id="3-调试电路和程序"><a href="#3-调试电路和程序" class="headerlink" title="3.调试电路和程序"></a>3.调试电路和程序</h3><p>拿到源码的时候各种库已经提前下好编译过了，于是直接上传，但是烧写完成后看屏幕还是黑的，先检查了代码，背光PWM没有问题。排查了好一会儿还是没找到原因，这时注意到屏幕其实是有显示的，只是非常非常暗，有点像背光接口的问题。检查了下电路，背光接口连线很奇怪，驱动三极管没有上拉到电源，这样就算三极管导通了一样亮不起来。然后打算飞线测试一下，把3.3V直接连到背光接口，屏幕闪亮了一下然后灭了，还闻到了点焦味，确定是背光接口电路出了问题，但是直接接到电源也不靠谱，没有限流电阻容易烧屏幕。最后尝试了很久，把驱动三极管拆了，然后背光IO口直接接到屏幕背光口，发现可以正常工作，原来不需要三极管就能直接驱动的。</p>
-<h3 id="4-总结"><a href="#4-总结" class="headerlink" title="4.总结"></a>4.总结</h3><p>制作过程还算顺利，虽然有各种没预料到的问题，但毕竟是第一次做，还是可以接受了。后面大概会自己改下电路，其中有几个元件过于难焊，而且不好买，打算换成常见一点的，可能还会加上电池，充电芯片什么的。</p>
-
+    
+    <a class="article-more-a" href="/leansblog/2022/01/17/folk-record1/#more">more >></a>
+    
     
 
     
@@ -793,11 +791,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color5">RTOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网站</a>
+                <a href="javascript:void(0)" class="js-tag color1">嵌入式系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -809,11 +807,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTOS</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">嵌入式系统</a>
+                <a href="javascript:void(0)" class="js-tag color3">网站</a>
               </li>
             
             <div class="clearfix"></div>
