@@ -6,21 +6,36 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://gitee.com/leannnnnnn/leansblog">
-  <title>LeansBlog</title>
+  <title>教程|使用ESP32制作简易的RGB音乐频谱灯 | LeansBlog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <!-- <meta name="keywords" content="">
-    <meta name="description" content=""> -->
-  
-  <meta property="og:type" content="website">
-<meta property="og:title" content="LeansBlog">
-<meta property="og:url" content="https://gitee.com/leannnnnnn/leansblog/">
+  <meta name="description" content="一、整体介绍 组装演示视频：Bilibili 开源链接  GitHub仓库：Fudan-EGA&#x2F;LEDSpectrum  国内仓库访问：leannnnnnn&#x2F;ledspectrum  使用ESP32开发板作为主控制器，64个单线串联RGB彩色灯板，麦克风采集声音，根据不同节奏和音高显示在RGB灯板上，形成炫酷的彩虹律动灯光效果。 采用模块电路搭建的方式，连接方式很简单，无需自己制作电路板即可实现功">
+<meta property="og:type" content="article">
+<meta property="og:title" content="教程|使用ESP32制作简易的RGB音乐频谱灯">
+<meta property="og:url" content="https://gitee.com/leannnnnnn/leansblog/2022/07/16/rgb-spectrum/">
 <meta property="og:site_name" content="LeansBlog">
+<meta property="og:description" content="一、整体介绍 组装演示视频：Bilibili 开源链接  GitHub仓库：Fudan-EGA&#x2F;LEDSpectrum  国内仓库访问：leannnnnnn&#x2F;ledspectrum  使用ESP32开发板作为主控制器，64个单线串联RGB彩色灯板，麦克风采集声音，根据不同节奏和音高显示在RGB灯板上，形成炫酷的彩虹律动灯光效果。 采用模块电路搭建的方式，连接方式很简单，无需自己制作电路板即可实现功">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/leannnnnnn/leansblog/2022/07/16/rgb-spectrum/img1.jpg">
+<meta property="og:image" content="https://gitee.com/leannnnnnn/leansblog/2022/07/16/rgb-spectrum/img2.jpg">
+<meta property="og:image" content="https://gitee.com/leannnnnnn/leansblog/2022/07/16/rgb-spectrum/img/img3.jpg">
+<meta property="og:image" content="https://gitee.com/leannnnnnn/leansblog/2022/07/16/rgb-spectrum/img/img4.jpg">
+<meta property="og:image" content="https://gitee.com/leannnnnnn/leansblog/2022/07/16/rgb-spectrum/img/img5.jpg">
+<meta property="og:image" content="https://gitee.com/leannnnnnn/leansblog/2022/07/16/rgb-spectrum/img/img6.png">
+<meta property="og:image" content="https://gitee.com/leannnnnnn/leansblog/2022/07/16/rgb-spectrum/img/img7.png">
+<meta property="og:image" content="https://gitee.com/leannnnnnn/leansblog/2022/07/16/rgb-spectrum/img/img8.png">
+<meta property="og:image" content="https://gitee.com/leannnnnnn/leansblog/2022/07/16/rgb-spectrum/img/img9.png">
+<meta property="og:image" content="https://gitee.com/leannnnnnn/leansblog/2022/07/16/rgb-spectrum/img/img10.png">
+<meta property="og:image" content="https://gitee.com/leannnnnnn/leansblog/2022/07/16/rgb-spectrum/img/img11.png">
+<meta property="article:published_time" content="2022-07-16T12:49:01.000Z">
+<meta property="article:modified_time" content="2022-07-16T13:30:56.237Z">
 <meta property="article:author" content="Leanus">
+<meta property="article:tag" content="记录">
+<meta property="article:tag" content="自制作品">
+<meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/leannnnnnn/leansblog/2022/07/16/rgb-spectrum/img1.jpg">
   
   
     <link rel="icon" href="/leansblog/img/L.png">
@@ -196,25 +211,25 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-教程-使用ESP32制作简易的RGB音乐频谱灯" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-教程-使用ESP32制作简易的RGB音乐频谱灯" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/leansblog/2022/07/16/rgb-spectrum/">教程|使用ESP32制作简易的RGB音乐频谱灯</a>
-	
+    <h1 class="article-title" itemprop="name">
+      教程|使用ESP32制作简易的RGB音乐频谱灯
     </h1>
   
 
 
   
   
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/leansblog/2022/07/16/rgb-spectrum/" class="archive-article-date">
         <time datetime="2022-07-16T12:49:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-16</time>
 </a>
@@ -222,6 +237,27 @@
   
   
     
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">2.2k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">7分</span>
+    </span>
+  </span>
+</div>
+
 
   
   </header>
@@ -356,6 +392,33 @@
     
 
     
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/leansblog/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
 
     
 
@@ -385,16 +448,76 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/leansblog/2022/07/16/rgb-spectrum/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://gitee.com/leannnnnnn/leansblog/2022/07/16/rgb-spectrum/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/leansblog/2022/02/08/git-hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git的基本用法和Hexo博客搭建</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -409,8 +532,31 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B4%E4%BD%93%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">一、整体介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%94%B5%E8%B7%AF%E6%90%AD%E5%BB%BA"><span class="toc-number">2.</span> <span class="toc-text">二、电路搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%B4%AD%E4%B9%B0%E6%B8%85%E5%8D%95%E5%92%8C%E9%93%BE%E6%8E%A5"><span class="toc-number">2.1.</span> <span class="toc-text">1. 购买清单和链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.2.</span> <span class="toc-text">2. 模块功能介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%83%A7%E5%BD%95%E7%A8%8B%E5%BA%8F"><span class="toc-number">3.</span> <span class="toc-text">三、烧录程序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">3.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%92%8C%E5%BA%93%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="toc-number">3.2.</span> <span class="toc-text">代码和库文件下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%8E%92%E6%9F%A5"><span class="toc-number">3.3.</span> <span class="toc-text">错误排查</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%BB%A3%E7%A0%81%E8%A7%A3%E8%AF%BB"><span class="toc-number">4.</span> <span class="toc-text">四、代码解读</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E5%88%B0%E7%9A%84%E5%BA%93%E5%87%BD%E6%95%B0%E4%BB%8B%E7%BB%8D"><span class="toc-number">4.1.</span> <span class="toc-text">用到的库函数介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81%E6%B5%81%E7%A8%8B%E5%88%86%E6%9E%90"><span class="toc-number">4.2.</span> <span class="toc-text">完整代码流程分析</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -436,485 +582,6 @@
     }
 </script>
 </section>
-
-  
-    <article id="post-Git的基本用法和Hexo博客搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/leansblog/2022/02/08/git-hexo/">Git的基本用法和Hexo博客搭建</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/leansblog/2022/02/08/git-hexo/" class="archive-article-date">
-        <time datetime="2022-02-08T14:44:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="Git的基本使用"><a href="#Git的基本使用" class="headerlink" title="Git的基本使用"></a>Git的基本使用</h1><p>Git的完整介绍<a target="_blank" rel="noopener" href="https://jrhar.blog.csdn.net/article/details/116703787">关于Git这一篇就够了</a></p>
-<p>GitHub和Gitee其实都是一样的，两个仓库也可以相互转移，国内平时用Gitee比较快，但最近找到了一个快速访问GitHub的方法（网易uu加速器开启学术资源加速，亲测免费可用）</p>
-<p>Gitee从头使用指南<a target="_blank" rel="noopener" href="https://blog.csdn.net/p445098355/article/details/104766195">gitee码云完整使用教程（部署与克隆）</a></p>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><p>自己总结了一些，方便平时使用</p>
-    
-    <a class="article-more-a" href="/leansblog/2022/02/08/git-hexo/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网站</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/leansblog/2022/02/08/git-hexo/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" style="margin:10px;padding:10px;background:#fff;">
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "1VjOX3wE7rSfHUgTcBiyR6w2-gzGzoHsz",
-            app_key: "7EsRllr3h6n1DqFriD84C9UX",
-            placeholder: "留下点足迹吧:)",
-            avatar:"mm"
-        });
-    }
-</script>
-</section>
-
-  
-    <article id="post-draft/FreeRTOS学习记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/leansblog/2022/01/17/freertos-begin/">FreeRTOS学习记录</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/leansblog/2022/01/17/freertos-begin/" class="archive-article-date">
-        <time datetime="2022-01-17T02:07:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-17</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>RTOS这块其实一直想学习来着，裸机跑多任务太受限，非常需要一种清晰的，顶层一些的结构。</p>
-<p>碰巧毕设换题换到嵌入式系统，也算机缘巧合，终于有机会开始学了。</p>
-<p>在看野火的FreeRTOS教程，理解起来不困难，但就是，非常不严谨，错字漏字一大片。大概是pdf版本太旧？可既然都出版了，校对也该上点心吧（Sigh..)后面应该还得看看官方手册</p>
-    
-    <a class="article-more-a" href="/leansblog/2022/01/17/freertos-begin/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">RTOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">嵌入式系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/leansblog/2022/01/17/freertos-begin/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" style="margin:10px;padding:10px;background:#fff;">
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "1VjOX3wE7rSfHUgTcBiyR6w2-gzGzoHsz",
-            app_key: "7EsRllr3h6n1DqFriD84C9UX",
-            placeholder: "留下点足迹吧:)",
-            avatar:"mm"
-        });
-    }
-</script>
-</section>
-
-  
-    <article id="post-开源项目复刻过程纪实" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/leansblog/2022/01/17/folk-record1/">开源项目复刻过程记录</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/leansblog/2022/01/17/folk-record1/" class="archive-article-date">
-        <time datetime="2022-01-17T01:54:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-17</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="桌面小电视复刻记录"><a href="#桌面小电视复刻记录" class="headerlink" title="桌面小电视复刻记录"></a>桌面小电视复刻记录</h1><p><a target="_blank" rel="noopener" href="https://oshwhub.com/xmz0916/esp32-desktop-tv">原项目开源链接</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xq4y1F7M1?spm_id_from=333.999.0.0">复现展示视频</a></p>
-<h3 id="1-元件采购过程"><a href="#1-元件采购过程" class="headerlink" title="1.元件采购过程"></a>1.元件采购过程</h3><p>屏幕很早就买了，接口是12pin的。然后pcb打板的时候才发现，工程用的屏幕是10pin的，就照另一个做12pin小电视的对着引脚改了过来，至于为什么不直接用这个工程，因为它的芯片用的8266，但我们只买了esp32。屏幕一改，布线都乱了，于是重新摆元件，重新布线，布线直接用了立创的自动布线，反正能用就行。</p>
-<p>打完pcb已经放假回家了，在家里挑了下元件，bom导出到立创商城挨个对，又想起来莱洛三角也要做的，干脆一块把元件下单了。各种型号的元件，缺货的也很多，还得淘宝重新找，虽然缺货的在立创有订货服务，但据说非常慢，而且贵…反正ic在立创基本是买不到的。第一次下单也不太清楚，提交的时候发现立创有两个仓库，分别发货运费直接翻倍…然后又重新选仓库，经常有缺货的，然后又得重新找。总之核对过程非常的繁琐。</p>
-<h3 id="2-收到pcb和元件，开始焊接"><a href="#2-收到pcb和元件，开始焊接" class="headerlink" title="2.收到pcb和元件，开始焊接"></a>2.收到pcb和元件，开始焊接</h3><p>工具都提前准备好了，买了一个鹿仙子恒温加热台，不带温控，但也勉强能用。pcb焊点挨个涂上锡膏，买的针筒式的，结果非常干，完全不好挤，最后变成一点一点涂（要是提前打了钢网就好了：）</p>
-    
-    <a class="article-more-a" href="/leansblog/2022/01/17/folk-record1/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目复刻</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/leansblog/2022/01/17/folk-record1/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" style="margin:10px;padding:10px;background:#fff;">
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "1VjOX3wE7rSfHUgTcBiyR6w2-gzGzoHsz",
-            app_key: "7EsRllr3h6n1DqFriD84C9UX",
-            placeholder: "留下点足迹吧:)",
-            avatar:"mm"
-        });
-    }
-</script>
-</section>
-
-  
-    <article id="post-Hello-World-0" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/leansblog/2022/01/11/hello-world/">Hello World</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/leansblog/2022/01/11/hello-world/" class="archive-article-date">
-        <time datetime="2022-01-11T12:07:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-11</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>Hello World！</p>
-<p>纪念我的第一篇博客</p>
-<p>于2022年1月11日晚</p>
-<p>大概会不定时写一点diy记录、学习过程etc…先挖点坑，反正自己的地方想发啥就发啥</p>
-<p>博客教程来自：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_46036214/article/details/110137239?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522164189817616780261968515%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=164189817616780261968515&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-110137239.first_rank_v2_pc_rank_v29&utm_term=gitee%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2&spm=1018.2226.3001.4187">在Gitee搭建属于自己的博客</a><br>用的国内平台Gitee搭的，访问还是比较稳定，也不用买域名搭服务器什么的，非常方便，推荐给想自己做网站玩玩的朋友</p>
-<p>学习之旅永无止境，一起学习，共同进步 </p>
-<blockquote>
-<p>个人主页<br>Gitee: <a href="https://gitee.com/leannnnnnn">https://gitee.com/leannnnnnn</a><br>GitHub: <a target="_blank" rel="noopener" href="https://github.com/Leannnnnnn">https://github.com/Leannnnnnn</a><br>Bilibili: <a target="_blank" rel="noopener" href="https://space.bilibili.com/45539292?spm_id_from=333.1007.0.0">Leannnus</a> </p>
-</blockquote>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/leansblog/2022/01/11/hello-world/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" style="margin:10px;padding:10px;background:#fff;">
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "1VjOX3wE7rSfHUgTcBiyR6w2-gzGzoHsz",
-            app_key: "7EsRllr3h6n1DqFriD84C9UX",
-            placeholder: "留下点足迹吧:)",
-            avatar:"mm"
-        });
-    }
-</script>
-</section>
-
-  
-  
-
 
           </div>
         </div>
@@ -953,8 +620,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
