@@ -199,7 +199,7 @@
             
 
   
-    <article id="post-教程-使用ESP32制作简易的RGB音乐频谱灯" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-教程-使用ESP32制作简易的RGB音乐频谱灯/教程-使用ESP32制作简易的RGB音乐频谱灯" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -207,7 +207,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/leansblog/2022/07/16/rgb-spectrum/">教程|使用ESP32制作简易的RGB音乐频谱灯</a>
+	  <a class="article-title" href="/leansblog/2022/07/16/rgb-spectrum/">教程-使用ESP32制作简易的RGB音乐频谱灯</a>
 	
     </h1>
   
@@ -233,26 +233,40 @@
 <li>开源链接<br>  GitHub仓库：<a target="_blank" rel="noopener" href="https://github.comfudan-ega/LEDSpectrum">Fudan-EGA/LEDSpectrum</a><br>  国内仓库访问：<a href="https://gitee.com/leannnnnnn/ledspectrum">leannnnnnn/ledspectrum</a></li>
 </ul>
 <p>使用E<strong>SP32开发板</strong>作为主控制器，64个单线串联RGB<strong>彩色灯板</strong>，<strong>麦克风</strong>采集声音，根据不同节奏和音高显示在RGB灯板上，形成炫酷的彩虹律动灯光效果。</p>
-<p>采用模块电路搭建的方式，连接方式很简单，无需自己制作电路板即可实现功能，并且方便后面自行添加其他功能。<br><img src="img1.jpg" alt="图片"><br><img src="img1.jpg"  width="60%" height="60%" /><br><img src="img2.jpg"  width="50%" height="50%" /> </p>
-<h2 id="二、电路搭建"><a href="#二、电路搭建" class="headerlink" title="二、电路搭建"></a>二、电路搭建</h2><h3 id="1-购买清单和链接"><a href="#1-购买清单和链接" class="headerlink" title="1. 购买清单和链接"></a>1. 购买清单和链接</h3><ul>
-<li>ESP32开发板  <a target="_blank" rel="noopener" href="https://m.tb.cn/h.fwVQ4Ek?tk=Kidt2pXJR1L">https://m.tb.cn/h.fwVQ4Ek?tk=Kidt2pXJR1L</a> </li>
-</ul>
-<ul>
-<li>灯板ws2812b RGB屏8x8点阵 <a target="_blank" rel="noopener" href="https://m.tb.cn/h.fwVQ4Ek?tk=Kidt2pXJR1L">https://m.tb.cn/h.fwVQ4Ek?tk=Kidt2pXJR1L</a></li>
-</ul>
-<ul>
-<li>麦克风MAX4466  <a target="_blank" rel="noopener" href="https://m.tb.cn/h.fEgPlFB?tk=4eN42pXJJN4">https://m.tb.cn/h.fEgPlFB?tk=4eN42pXJJN4</a><br><strong>注意</strong>：该麦克风模块排针没有焊接，需要<strong>自行焊接</strong>（只有三个点，焊接非常简单）</li>
-</ul>
-<ul>
-<li>公对母+母对母杜邦线 <a target="_blank" rel="noopener" href="https://m.tb.cn/h.fE9hgap?tk=GFwX2pSC4Lj">https://m.tb.cn/h.fE9hgap?tk=GFwX2pSC4Lj</a></li>
-</ul>
-<pre><code>入门级电烙铁推荐购买：[https://m.tb.cn/h.fDhTaXj?tk=Wunk2pSxYYK](https://m.tb.cn/h.fDhTaXj?tk=Wunk2pSxYYK)
-</code></pre>
-<ul>
-<li><strong>一键下单</strong>： <a target="_blank" rel="noopener" href="https://m.tb.cn/h.fDhTWez">https://m.tb.cn/h.fDhTWez</a> 手机淘宝打开，购物车打包链接，含以上全部商品，型号已经选好，直接购买即可</li>
-</ul>
+<p>采用模块电路搭建的方式，连接方式很简单，无需自己制作电路板即可实现功能，并且方便后面自行添加其他功能。<br><img src="img1.jpg"  width="60%" height="60%" /><br><img src="img2.jpg"  width="50%" height="50%" /> </p>
+<h2 id="二、电路搭建"><a href="#二、电路搭建" class="headerlink" title="二、电路搭建"></a>二、电路搭建</h2><h3 id="1-购买清单和链接"><a href="#1-购买清单和链接" class="headerlink" title="1. 购买清单和链接"></a>1. 购买清单和链接</h3><table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">链接</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ESP32开发板</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://m.tb.cn/h.fwVQ4Ek?tk=Kidt2pXJR1L">淘宝</a></td>
+<td align="center">核心板+底板</td>
+</tr>
+<tr>
+<td align="center">灯板ws2812b</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://m.tb.cn/h.fwVQ4Ek?tk=Kidt2pXJR1L">淘宝</a></td>
+<td align="center">选择8x8点阵</td>
+</tr>
+<tr>
+<td align="center">麦克风MAX4466</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://m.tb.cn/h.fEgPlFB?tk=4eN42pXJJN4">淘宝</a></td>
+<td align="center"><strong>注意</strong>：排针没有焊接，需要<strong>自行焊接</strong></td>
+</tr>
+<tr>
+<td align="center">杜邦线</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://m.tb.cn/h.fE9hgap?tk=GFwX2pSC4Lj">淘宝</a></td>
+<td align="center">型号选公对母+母对母，长度合适就行</td>
+</tr>
+</tbody></table>
+<p>入门级电烙铁推荐购买：<a target="_blank" rel="noopener" href="https://m.tb.cn/h.fDhTaXj?tk=Wunk2pSxYYK">https://m.tb.cn/h.fDhTaXj?tk=Wunk2pSxYYK</a></p>
+<p><strong>一键下单</strong>： <a target="_blank" rel="noopener" href="https://m.tb.cn/h.fDhTWez">https://m.tb.cn/h.fDhTWez</a> 手机淘宝打开，购物车打包链接，含以上全部商品，型号已经选好，直接购买即可</p>
 <h3 id="2-模块功能介绍"><a href="#2-模块功能介绍" class="headerlink" title="2. 模块功能介绍"></a>2. 模块功能介绍</h3><ul>
-<li><p><strong>ESP32开发板+拓展板：</strong><br><img src="img/img3.jpg"  width="50%" height="50%" /> \</p>
+<li><p><strong>ESP32开发板+拓展板：</strong><br><img src="img3.jpg"  width="50%" height="50%" /> \</p>
 <p>开发板型号：ESP32-DevKitC WROOM-32</p>
 <blockquote>
 <p>使用ESP32开发板作为控制芯片，处理麦克风采集的数据，然后驱动屏幕显示不同内容，由于开发板引出来的供电端口比较少，所以用了一块拓展底板，可以外接很多模块而不用担心供电问题。</p>
@@ -508,126 +522,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/leansblog/2022/02/08/git-hexo/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" style="margin:10px;padding:10px;background:#fff;">
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "1VjOX3wE7rSfHUgTcBiyR6w2-gzGzoHsz",
-            app_key: "7EsRllr3h6n1DqFriD84C9UX",
-            placeholder: "留下点足迹吧:)",
-            avatar:"mm"
-        });
-    }
-</script>
-</section>
-
-  
-    <article id="post-draft/FreeRTOS学习记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/leansblog/2022/01/17/freertos-begin/">FreeRTOS学习记录</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/leansblog/2022/01/17/freertos-begin/" class="archive-article-date">
-        <time datetime="2022-01-17T02:07:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-17</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>RTOS这块其实一直想学习来着，裸机跑多任务太受限，非常需要一种清晰的，顶层一些的结构。</p>
-<p>碰巧毕设换题换到嵌入式系统，也算机缘巧合，终于有机会开始学了。</p>
-<p>在看野火的FreeRTOS教程，理解起来不困难，但就是，非常不严谨，错字漏字一大片。大概是pdf版本太旧？可既然都出版了，校对也该上点心吧（Sigh..)后面应该还得看看官方手册</p>
-    
-    <a class="article-more-a" href="/leansblog/2022/01/17/freertos-begin/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">RTOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">嵌入式系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/leansblog/2022/01/17/freertos-begin/">展开全文 >></a>
     </p>
     
 
@@ -1041,23 +935,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目复刻</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">自制作品</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">教程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">嵌入式系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">项目复刻</a>
               </li>
             
             <div class="clearfix"></div>
